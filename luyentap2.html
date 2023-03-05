@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen tap 2</title>
+</head>
+<body>
+<script>
+  // var array = [ 'a', 's', 'c', '2', '6', '1' ];
+  // var first = 0;
+  // var last = array.length - 1;
+  // for (var i = 0; i<array.length;i++){
+  //   if (first<last){
+  //     var b = array[first];
+  //     array[first] = array[last];
+  //     array[last] = b;
+  //     first++;
+  //     last--;
+  //   }
+  // }document.write(array.join(""))
+
+
+
+
+  // kiem dem so trong mang
+  // var array = [1,5,14,-3,-6,0,81,"a","b","c","d","f"];
+  // var x = 0;
+  // document.write(array.length+"<br>");
+  // for (i=0;i<array.length;i++){
+  //     if(!isNaN(array[i])){
+  //         x++
+  //     }
+  // }document.write(x)
+
+  // Nhập chuỗi từ người dùng
+ //  const str = prompt("Nhập chuỗi:");
+ //  const wordCount = str.split(" ").length;
+ // document.write("Số từ trong chuỗi là: " + wordCount);
+
+
+// kiem tra 2 chuoi giong nhau
+//   let str1 = prompt("Nhập chuỗi thứ nhất:");
+//   let str2 = prompt("Nhập chuỗi thứ hai:");
+//   if (str1 === str2) {
+//     document.write("Hai chuỗi giống nhau");
+//   } else {
+//       document.write("Hai chuỗi khác nhau");
+//   }
+
+
+
+  // thay ki tu
+  let arr = [prompt("Nhập mảng ký tự:").split("");]
+  for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === "-") {
+          arr[i] = "_";
+      }
+  }
+ document.write(arr);
+
+</script>
+</body>
+</html>
