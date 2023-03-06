@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>application</title>
+</head>
+<body>
+<h1>Add new product</h1>
+<input id="product" type="text"><button type="button" value="Add" onclick="add()">Add</button>
+<h2>Display All Product</h2>
+<p id="list"></p>
+
+<script>
+    var array = ["Sony Xperia","Samsung Galaxyluck","Nokia 6","Xiaomi Redmi Note4","Apple Iphone 6s","Xiaomi Mi 5s Plus","Apple Iphone 8 Plus","Fujitsu F-04E","Oppo A71"]
+    function add(){
+        var product = document.getElementById("product").value
+        array.push(product);
+        document.getElementById("list").innerHTML = display();
+    }
+    function display() {
+        var s = "";
+        for (i=0;i<array.length;i++){
+            s += (i+1)+"."+array[i]+"<button type='button' onclick='edit(" + i + ")'>Edit</button><button type='button' onclick='detele(" + i + ")'>Delete</button> <br>";
+        } return s ;
+    } document.getElementById("list").innerHTML = display();
+    function detele(i) {
+        array.splice(i,1);
+        document.getElementById("list").innerHTML = display();
+    }document.getElementById("list").innerHTML = display();
+    function edit(i) {
+        var newArray = prompt("enter the product you want to change:")
+        array[i]= newArray;
+        document.getElementById("list").innerHTML = display();
+    }
+</script>
+</body>
+</html>
