@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mobile</title>
+</head>
+<body>
+<script>
+  class Mobile{
+      constructor() {
+          this.power = 100;
+          this.isOn = false;
+          this.draft = "";
+          this.inbox = [];
+          this.sent = [];
+      }
+      checkPower(){
+          return this.power
+      }
+      turnOn(){
+          if(!this.isOn){
+              this.isOn = true;
+              this.power--;
+          }
+      }
+      turnOff(){
+          if (this.isOn){
+              this.isOn = false;
+              this.power--;
+          }
+      }
+      chargePower(){
+          if(this.power<100){
+              this.power++;
+          }
+      }
+      createDraft(message){
+          if (this.isOn){
+              this.draft = message;
+              this.power--;
+          }
+      }
+      sendMessage(message,mobie){
+          if (this.isOn){
+              mobie.receiveMessage(message)
+              this.sent.push(message,mobie);
+              this.power--
+          }
+      }
+      receiveMessage(message){
+          if (this.isOn){
+              this.inbox.push(message);
+              this.power--;
+          }
+      }
+      viewInbox(){
+          if(this.isOn){
+              return this.inbox;
+              this.power--;
+          }
+      }
+      viewSent(){
+          if(this.isOn){
+              return this.sent;
+              this.power--;
+          }
+      }
+  }
+  var nokia = new Mobile();
+  var iphone = new Mobile();
+  nokia.turnOn();
+  iphone.turnOn();
+  nokia.createDraft("hom nay toi buon");
+  nokia.sendMessage(nokia.draft,iphone);
+  document.write(iphone.inbox);
+  document.write(nokia.checkPower())
+</script>
+</body>
+</html>
