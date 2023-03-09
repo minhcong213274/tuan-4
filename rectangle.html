@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+  class rectangle{
+      constructor(width,height) {
+          this.width = width;
+          this.height = height;
+      }
+      getArea(){
+          return this.width*this.height
+      }
+      getPerimeter(){
+          return 2*(this.width+this.height)
+      }
+      drawRectangle(){
+          var ctx = document.getElementById("myCanvas").getContext("2d");
+          ctx.rect(40,20,this.width,this.height)
+          ctx.stroke();
+      }
+  }
+  var myRectangle = new rectangle(200,400)
+  myRectangle.width = 100
+  myRectangle.height = 200
+  myRectangle.drawRectangle()
+
+</script>
+</body>
+</html>
