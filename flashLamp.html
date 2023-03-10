@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flashLamp</title>
+</head>
+<body>
+<script>
+   class Battery{
+       constructor() {
+           this.enery = 10;
+       }
+       decraseEnergy(){
+           if (this.enery>0){
+               this.enery--
+           }
+       }
+   }
+   class FlashLamp{
+       constructor() {
+           this.battery = battery;
+           this.status = false;
+       }
+       batteryInfo(){
+           return this.battery.enery
+       }
+       turnOn(){
+           this.status=true;
+           this.battery.decraseEnergy();
+           if (this.battery.enery>0){
+               alert("linghting")
+           }
+       }
+       turnOff(){
+           this.status=false;
+           this.battery.decraseEnergy();
+       }
+   }
+   var battery = new Battery();
+   var flashLamp = new FlashLamp();
+   flashLamp.turnOn()
+   document.write(flashLamp.batteryInfo())
+</script>
+</body>
+</html>
